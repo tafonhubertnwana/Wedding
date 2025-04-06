@@ -2,6 +2,14 @@
 // components/Footer.js
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { Allura } from 'next/font/google';
+
+const allura = Allura({
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+});
+
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -31,7 +39,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           {/* Wedding couple names */}
           <div className="mb-4 md:mb-0 text-center md:text-left">
-            <h3 className="text-xl font-serif font-medium text-white">
+            <h3 className={`${allura.className} text-amber-400 text-xl font-serif font-medium `}>
               Regina & Etanyeor
             </h3>
             <p className="text-gray-300 text-sm mt-1">

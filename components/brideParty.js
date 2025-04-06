@@ -1,23 +1,31 @@
+
 'use client';
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { Allura } from 'next/font/google';
+
+const allura = Allura({
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+});
 
 const groomsmen = [
-  { name: 'Julian Bernard', image: '/groomsmen1.jpg' },
-  { name: 'Damán Haber', image: '/groomsmen2.jpg' },
-  { name: 'Patrik Pavone', image: '/groomsmen3.jpg' },
-  { name: 'David Tatum', image: '/groomsmen4.jpg' },
-  { name: 'David Tatum', image: '/groomsmen4.jpg' },
+  { name: 'Julian Bernard', image: '/images/groomsmen1.jpeg' },
+  { name: 'Damán Haber', image: '/images/groomsmen2.jpeg' },
+  { name: 'Patrik Pavone', image: '/images/groomsmen3.jpeg' },
+  { name: 'David Tatum', image: '/images/groomsmen1.jpeg' },
+  { name: 'David Tatum', image: '/images/groomsmen2.jpeg' },
 
 ];
 
 const bridesmaids = [
-  { name: 'Anna Cole', image: '/bridesmaid1.jpg' },
-  { name: 'Sophia Lenz', image: '/bridesmaid2.jpg' },
-  { name: 'Maria Nguyen', image: '/bridesmaid3.jpg' },
-  { name: 'Rachel Bloom', image: '/bridesmaid4.jpg' },
-  { name: 'Rachel Bloom', image: '/bridesmaid4.jpg' },
+  { name: 'Anna Cole', image: '/images/bridesmaid1.jpeg' },
+  { name: 'Sophia Lenz', image: '/images/bridesmaid2.jpeg' },
+  { name: 'Maria Nguyen', image: '/images/bridesmaid3.jpeg' },
+  { name: 'Rachel Bloom', image: '/images/bridesmaid1.jpeg' },
+  { name: 'Rachel Bloom', image: '/images/bridesmaid2.jpeg' },
 ];
 
 const BridalParty = () => {
@@ -26,10 +34,10 @@ const BridalParty = () => {
   const people = activeTab === 'groomsmen' ? groomsmen : bridesmaids;
 
   return (
-    <div className=" px-6 py-12 bg-pink-50">
+    <div className=" px-6 py-12 bg-amber-50 ">
       <div className='container xl:max-w-6xl mx-auto p-6'>
 
-        <h1 className="text-4xl font-serif text-center mb-8">The Bridal Party</h1>
+        <h1 className={`${allura.className} text-4xl font-serif text-center mb-8`}>The Bridal Party</h1>
 
         <div className="flex justify-center space-x-6 mb-10">
           <button
@@ -51,25 +59,34 @@ const BridalParty = () => {
         </div>
 
         <motion.div
-          key={activeTab}
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8 justify-items-center"
-        >
-          {people.map((person, index) => (
-            <div key={index} className="text-center">
-              <div className="border-4 border-rose-100 p-1 rounded-lg overflow-hidden w-44 h-56">
-                <img
-                  src={person.image}
-                  alt={person.name}
-                  className="w-full h-full object-cover rounded"
-                />
-              </div>
-              <p className="mt-4 text-lg font-serif">{person.name}</p>
-            </div>
-          ))}
-        </motion.div>
+  key={activeTab}
+  initial={{ opacity: 0, y: 30 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.5 }}
+  className="grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-4 md:gap-6 justify-items-center"
+>
+  {people.map((person, index) => (
+    <div 
+      key={`${person.name}-${index}`} 
+      className="text-center w-full max-w-[180px] md:max-w-[200px]"
+    >
+      <div className="border-2 border-rose-100/50 hover:border-rose-100 transition-colors duration-300 p-1 rounded-lg overflow-hidden w-full aspect-[3/4]">
+        <img
+          src={person.image}
+          alt={person.name}
+          className="w-full h-full object-cover rounded hover:scale-105 transition-transform duration-300"
+          loading="lazy"
+        />
+      </div>
+      <p className="mt-3 text-sm md:text-base font-medium text-gray-800 font-sans">
+        {person.name}
+      </p>
+      {person.title && (
+        <p className="text-xs text-gray-500 mt-1">{person.title}</p>
+      )}
+    </div>
+  ))}
+</motion.div>
       </div>
     </div>
   );

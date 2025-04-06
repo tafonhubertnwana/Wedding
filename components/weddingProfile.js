@@ -4,6 +4,13 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { FaHeart } from 'react-icons/fa';
 import WeddingTimeline from "@/components/timeLine";
+import { Allura } from 'next/font/google';
+
+const allura = Allura({
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+});
 
 const WeddingInvitation = () => {
   return (
@@ -32,7 +39,7 @@ const WeddingInvitation = () => {
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className="space-y-6 text-base sm:text-lg leading-relaxed justify-center"
+        className="space-y-6 text-base sm:text-lg leading-relaxed text-justify"
       >
         <p>
           Feugiat pretium egestas enim blandit purus euismod. Feugiat magna aliquam
@@ -65,6 +72,12 @@ const WeddingInvitation = () => {
         >
           {/* Heading */}
          
+          <motion.h1 
+          className={`${allura.className}  text-4xl md:text-5xl font-bold text-center mb-8 text-gray-800`}
+          whileHover={{ scale: 1.02 }}
+        >
+          Hello!
+        </motion.h1>
 
           {/* Invitation text */}
           <motion.p 
@@ -92,8 +105,8 @@ const WeddingInvitation = () => {
             >
               <div className="flex flex-col md:flex-row items-center gap-6">
                 <div className="order-2 md:order-1 text-right">
-                  <h2 className="text-3xl font-semibold mb-4 text-gray-800">Etanyeor</h2>
-                  <p className="text-gray-600 leading-relaxed text-">
+                  <h2 className={`${allura.className} text-3xl font-semibold mb-4 text-amber-40 text-amber-400`}>Etanyeor</h2>
+                  <p className="text-gray-600  text-justify leading-relaxed text-">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
                   </p>
                 </div>
@@ -171,8 +184,8 @@ const WeddingInvitation = () => {
                   </div>
                 </div>
                 <div>
-                  <h2 className="text-3xl font-semibold mb-4 text-gray-800">Regina</h2>
-                  <p className="text-gray-600 leading-relaxed">
+                  <h2 className={`${allura.className} text-3xl font-semibold mb-4  text-amber-400`}>Regina</h2>
+                  <p className="text-gray-600 text-justify leading-relaxed">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
                   </p>
                 </div>

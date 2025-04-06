@@ -10,6 +10,9 @@ export default {
       animation: {
         'float': 'float 3s ease-in-out infinite',
       },
+      fontFamily: {
+        allura: ['var(--font-allura)'],
+      },
       keyframes: {
         float: {
           '0%, 100%': { transform: 'translateY(0)' },
