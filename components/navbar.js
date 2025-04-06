@@ -1,6 +1,8 @@
 "use client"
 import { useState, useEffect } from 'react';
+
 import Link from 'next/link';
+import { Suspense } from 'react'
 import { usePathname, useSearchParams } from 'next/navigation';
 import { Allura } from 'next/font/google';
 
@@ -10,7 +12,7 @@ const allura = Allura({
   subsets: ['latin'],
 });
 
-const Navbar = () => {
+const NavbarContent= () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [showBackToTop, setShowBackToTop] = useState(false);
@@ -201,5 +203,13 @@ const Navbar = () => {
     </>
   );
 };
+
+const Navbar = () => {
+  return (
+    <Suspense fallback={<div className="h-16 bg-white"></div>}>
+      <NavbarContent />
+    </Suspense>
+  )
+}
 
 export default Navbar;
