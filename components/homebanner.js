@@ -33,7 +33,7 @@ const HomeBanner = () => {
 
         {/* Text Container */}
         <div className="relative z-20 w-full px-4 sm:px-6 lg:px-8">
-          <div className="container mx-auto flex justify-center md:justify-end items-center h-full">
+          <div className="container mx-auto flex justify-end items-center h-full">
             <div className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-xl text-center md:text-right pl-6 md:pl-0">
               {/* Allura applied to h1 */}
               <h1 className={`${allura.className} text-5xl sm:text-6xl md:text-6 lg:text-7xl mb-2 sm:mb-3 text-amber-500 drop-shadow-lg`}>

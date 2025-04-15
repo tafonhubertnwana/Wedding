@@ -12,20 +12,20 @@ const allura = Allura({
 });
 
 const groomsmen = [
-  { name: 'Julian Bernard', image: '/images/groomsmen1.jpeg' },
-  { name: 'Damán Haber', image: '/images/groomsmen2.jpeg' },
-  { name: 'Patrik Pavone', image: '/images/groomsmen3.jpeg' },
-  { name: 'David Tatum', image: '/images/groomsmen1.jpeg' },
-  { name: 'David Tatum', image: '/images/groomsmen2.jpeg' },
-
+  { name: 'Abongwa Gavin', image: '/images/groomsmen-1.jpg' },
+  { name: 'Kimeng Terence', image: '/images/groomsmen-2.jpg' },
+  { name: 'Takang Igal', image: '/images/groomsmen-3.jpg' },
+  { name: 'Anjiituo Boris', image: '/images/groomsmen-4.jpg' },
+  { name: 'Tankwa Edwin', image: '/images/groomsmen-5.jpg' },
+ 
 ];
 
 const bridesmaids = [
-  { name: 'Anna Cole', image: '/images/bridesmaid1.jpeg' },
-  { name: 'Sophia Lenz', image: '/images/bridesmaid2.jpeg' },
-  { name: 'Maria Nguyen', image: '/images/bridesmaid3.jpeg' },
-  { name: 'Rachel Bloom', image: '/images/bridesmaid1.jpeg' },
-  { name: 'Rachel Bloom', image: '/images/bridesmaid2.jpeg' },
+  { name: 'Tabenyang Erika', image: '/images/bridemaid-1.jpg' },
+  { name: 'Ambock Zeldine', image: '/images/bridemaid-2.jpg' },
+  { name: 'Nkongho Sally', image: '/images/bridemaid-3.jpg' },
+  { name: 'Tabenyang Collette', image: '/images/bridemaid-4.jpg' },
+  { name: 'Ndip Kelline', image: '/images/bridemaid-5.jpg' },
 ];
 
 const BridalParty = () => {

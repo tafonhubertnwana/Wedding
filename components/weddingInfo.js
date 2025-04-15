@@ -45,10 +45,10 @@ const events = [
   {
     title: 'Reception',
     icon: '/images/entrance.png',
-    date: 'Saturday April 20, 2016',
+    date: 'Saturday April 26, 2025',
     time: '@6:00PM Prompt',
-    location: 'Douala-Cameroon',
-    address: 'Behind road Bonaberi-Douala ',
+    location: 'Douala-Cameroon ',
+    address: 'Behind Royal Palace Hotel old road Bonaberi-Douala',
   },
 ];
 

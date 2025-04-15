@@ -14,31 +14,31 @@ const timelineData = [
     year: "December 2018",
     title: "First Date",
     description: "It was a chilly winter evening when we first met at that little Italian bistro downtown. I spilled my wine within five minutes (typical), but instead of laughing at me, you helped clean it up and ordered me another glass. We talked until the staff started stacking chairs, and I knew right then—this was different. You walked me home under the streetlights, and I replayed every word you said in my head for days.",
-    image: '/images/background.jpg'
+    image: '/images/gallery-11.jpg'
   },
   {
     year: "June 2020",
     title: "Our First Child",
     description: "By 'first child,' we mean Max, the golden retriever puppy who destroyed our couch but stole our hearts. You swore we wouldn't spoil him, yet by week two, he was sleeping in our bed. Those late-night potty walks and chewed-up shoes became our shared chaos—and I wouldn't trade it for anything. (Though I still blame you for letting him lick the butter off the counter that one time.)",
-    image: '/images/background.jpg'
+    image: '/images/gallery-18.jpg'
   },
   {
     year: "February 2022",
     title: "Second Date",
     description: "Yes, we call it a 'second date' because after three years together, we realized we'd never actually gone on a proper dinner-and-movie night like normal couples. So we recreated our first date—same restaurant, same wine spill (again, me)—but this time, you kissed me goodnight instead of that awkward hug. Progress.",
-    image: '/images/background.jpg'
+    image: '/images/gallery-7.jpg'
   },
   {
     year: "March 2023",
     title: "Our Vacation",
     description: "That cabin in the mountains with no WiFi, just a fireplace and a deck of cards. You burned the pancakes every morning, and I kept forgetting to pack socks. We hiked to a waterfall, where you slipped on a rock and came up laughing, soaked to the bone. I took a photo of that grin—your 'I don't care if I look ridiculous' grin—and it's still my phone wallpaper.",
-    image: '/images/background.jpg'
+    image: '/images/gallery-14.jpg'
   },
   {
     year: "April 2024",
     title: "The Proposal",
     description: "You planned a picnic at our favorite park, right under the oak tree where we had our first fight (over whether pineapple belongs on pizza). As I unwrapped the sandwiches, I found a ring tucked between the pickles. You said, 'I'd rather argue with you about stupid things forever than agree with anyone else.' Luna barked. I cried. You panicked when I took too long to say yes.",
-    image: "/images/couple-2.jpg"
+    image: "/images/couple-1.jpg"
   },
 ];
 
