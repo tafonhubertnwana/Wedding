@@ -38,7 +38,7 @@ const timelineData = [
     year: "April 2024",
     title: "The Proposal",
     description: "You planned a picnic at our favorite park, right under the oak tree where we had our first fight (over whether pineapple belongs on pizza). As I unwrapped the sandwiches, I found a ring tucked between the pickles. You said, 'I'd rather argue with you about stupid things forever than agree with anyone else.' Luna barked. I cried. You panicked when I took too long to say yes.",
-    image: "/images/couple-1.jpg"
+    image: "/images/gallery-21.jpg"
   },
 ];
 
@@ -72,7 +72,7 @@ const Timeline = () => {
                   viewport={{ once: true }}
                 />
               </div>
-              <div className="w-3/4 pl-4 border-2 md:p-4" >
+              <div className="w-3/4 pl-4  md:p-4" >
                 <time className="font-mono italic text-gray-500 text-lg">{event.year}</time>
                 <h3 className={`${allura.className} text-xl font-bold text-amber-400 mt-2`}>{event.title}</h3>
                 <p className="text-gray-700 text-justify mt-1">{event.description}</p>
@@ -83,9 +83,9 @@ const Timeline = () => {
             <div className="hidden md:flex w-full ">
               {index % 2 === 0 ? (
                 <>
-                  <div className="w-1/2 pr-8 text-right border-2">
+                  <div className="w-1/2 pr-8 text-right ">
                     <time className="font-mono italic text-gray-500 text-lg">{event.year}</time>
-                    <h3 className={`${allura.className} text-xl sm:text-2xl font-bold mt-2`}>{event.title}</h3>
+                    <h3 className={`${allura.className} text-xl sm:text-2xl font-bold mt-2 text-amber-400`}>{event.title}</h3>
                     <p className="text-gray-700 mt-1">{event.description}</p>
                   </div>
                   <div className="w-1/2 flex justify-center">
@@ -117,7 +117,7 @@ const Timeline = () => {
                   </div>
                   <div className="w-1/2 pl-8 text-left">
                     <time className="font-mono italic text-gray-500 text-lg">{event.year}</time>
-                    <h3 className={`${allura.className} text-xl sm:text-2xl font-bold mt-2`}>{event.title}</h3>
+                    <h3 className={`${allura.className} text-xl sm:text-2xl font-bold mt-2 text-amber-400`}>{event.title}</h3>
                     <p className="text-gray-700 mt-1">{event.description}</p>
                   </div>
                 </>
@@ -156,7 +156,7 @@ const Timeline = () => {
           <div className="hidden md:flex w-full">
             <div className="w-1/2 pr-8 text-right">
               <time className="font-mono italic text-gray-500 text-lg">April 25, 2025</time>
-              <h3 className="text-xl font-bold text-amber-400 mt-2">We're Getting Married!</h3>
+              <h3 className={`${allura.className} text-xl sm:text-2xl font-bold mt-2 text-amber-400`}>We're Getting Married!</h3>
               <p className="text-gray-700 mt-1">After this beautiful journey together, we've decided to tie the knot and spend the rest of our lives as partners. Join us as we celebrate our love!</p>
             </div>
             <div className="w-1/2 flex justify-center">

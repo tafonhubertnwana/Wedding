@@ -127,7 +127,7 @@ const WeddingInfo = () => {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="bg-amber-400 text-white font-bold p-3 px-5 rounded-md shadow-md text-lg backdrop-blur-sm bg-opacity-80"
+          className="bg-purple-500 text-amber-400 font-bold p-3 px-5 rounded-md shadow-md text-lg backdrop-blur-sm bg-opacity-80"
         >
           <span className="block text-3xl">{value}</span>
           <span className="text-sm font-semibold">
@@ -145,7 +145,7 @@ const WeddingInfo = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className={`${allura.className} text-4xl sm:text-5xl md:text-6xl text-gray-800 relative z-10 `}
+        className={`${allura.className} text-4xl sm:text-5xl md:text-5xl text-amber-400 relative z-10 `}
       >
         Wedding Information
       </motion.h2>

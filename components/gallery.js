@@ -28,11 +28,15 @@ const WeddingGallery = () => {
     { id: 10, src: '/images/gallery-10.jpg', category: 'BANQUET' },
     { id: 11, src: '/images/gallery-11.jpg', category: 'FAMILY' },
     { id: 12, src: '/images/gallery-12.jpg', category: 'PARTY' },
-    { id: 13, src: '/images/gallery-13.jpg', category: 'PARTY' },
-    { id: 14, src: '/images/gallery-14.jpg', category: 'PARTY' },
-    { id: 15, src: '/images/gallery-15.jpg', category: 'PARTY' },
+    { id: 13, src: '/images/gallery-13.jpg', category: 'FAMILY' },
+    { id: 14, src: '/images/gallery-14.jpg', category: 'BANQUET' },
+    { id: 15, src: '/images/gallery-15.jpg', category: 'FRIENDS' },
     { id: 16, src: '/images/gallery-16.jpg', category: 'PARTY' },
-    { id: 17, src: '/images/gallery-17.jpg', category: 'PARTY' },
+    { id: 17, src: '/images/gallery-17.jpg', category: 'FRIENDS' },
+    { id: 18, src: '/images/gallery-18.jpg', category: 'BANQUET' },
+    { id: 19, src: '/images/gallery-19.jpg', category: 'FAMILY' },
+    { id: 20, src: '/images/gallery-20.jpg', category: 'PARTY' },
+    { id: 21, src: '/images/gallery-21.jpg', category: 'FAMILY' },
   ];
 
   const filteredImages = activeCategory === 'ALL MOMENTS'
@@ -76,46 +80,46 @@ const WeddingGallery = () => {
         </motion.div>
 
         <motion.div
-  className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6"
-  initial={{ opacity: 0 }}
-  animate={{ opacity: 1 }}
-  transition={{ delay: 0.6 }}
->
-  {displayedImages.map((image) => {
-    const isTall = [1, 7, 9, 24].includes(image.id);
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.6 }}
+        >
+          {displayedImages.map((image) => {
+            const isTall = [1, 7, 9, 24].includes(image.id);
 
-    return (
-      <motion.div
-        key={image.id}
-        className={`relative overflow-hidden shadow-md hover:shadow-lg transition-shadow ${
-          isTall ? 'md:row-span-2 md:h-[472px]' : 'h-48 sm:h-56'
-        }`}
-        whileHover={{ y: -5 }}
-        layout
-      >
-        <motion.img
-          src={image.src}
-          alt="Gallery image"
-          className={` ${isTall ? 'h-full' : 'h-54 w-54 '} object-cover cursor-pointer`}
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.3 }}
-          whileHover={{ scale: 1.05 }}
-          onClick={() => setSelectedImage(image.src)}
-        />
-      </motion.div>
-    );
-  })}
-</motion.div>
+            return (
+              <motion.div
+                key={image.id}
+                className={`relative overflow-hidden shadow-md hover:shadow-lg transition-shadow
+                  h-54 sm:h-56 md:h-auto
+                  ${[1, 7, 9, 24].includes(image.id) ? 'md:row-span-2 md:h-[472px]' : ''}
+                `}
+                whileHover={{ y: -5 }}
+                layout
+              >
+                <motion.img
+                  src={image.src}
+                  alt="Gallery image"
+                  className={` ${isTall ? 'h-full w-full' : 'h-full w-full md:w-54 '} object-cover cursor-pointer`}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.3 }}
+                  whileHover={{ scale: 1.05 }}
+                  onClick={() => setSelectedImage(image.src)}
+                />
+              </motion.div>
+            );
+          })}
+        </motion.div>
 
-
-        {!showAll && filteredImages.length > 8 && (
+        {filteredImages.length > 8 && (
           <div className="flex justify-center mt-8">
             <button
               className="px-6 py-2 text-base font-medium text-white bg-purple-500 rounded hover:bg-purple-800 transition"
-              onClick={() => setShowAll(true)}
+              onClick={() => setShowAll(!showAll)}
             >
-              View All
+              {showAll ? 'View Less' : 'View All'}
             </button>
           </div>
         )}

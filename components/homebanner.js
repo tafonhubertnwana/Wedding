@@ -33,16 +33,26 @@ const HomeBanner = () => {
 
         {/* Text Container */}
         <div className="relative z-20 w-full px-4 sm:px-6 lg:px-8">
-          <div className="container mx-auto flex justify-end items-center h-full">
+          <div className="container mx-auto flex justify-center items-center h-full">
             <div className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-xl text-center md:text-right pl-6 md:pl-0">
               {/* Allura applied to h1 */}
-              <h1 className={`${allura.className} text-5xl sm:text-6xl md:text-6 lg:text-7xl mb-2 sm:mb-3 text-amber-500 drop-shadow-lg`}>
-              Regina & Etanyeor
+              <h1 className={`${allura.className} flex md:justify-end justify-end text-4xl sm:text-6xl md:text-6xl lg:text-7xl mb-2 sm:mb-3 text-amber-500 drop-shadow-lg`}>
+                Regina & Etanyeor
               </h1>
-              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-serif font-medium mb-3 sm:mb-4 italic text-amber-400 drop-shadow-md">
-                Will Get Married
-              </h2>
-              <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-light text-amber-300 drop-shadow-sm">
+
+              <div className="flex md:justify-end justify-end">
+  <Image 
+    src="/images/rings.png"
+    alt="Regina and Etanyeor"
+    width={150}
+    height={150}
+    className=" w-24 sm:w-28 md:w-32 lg:w-36 filter brightness-0 invert sepia saturate-100 hue-rotate-10 drop-shadow-md"
+    style={{ filter: 'invert(72%) sepia(56%) saturate(581%) hue-rotate(2deg) brightness(95%) contrast(90%)' }}
+  />
+</div>
+
+
+              <p className="text-lg  font-semibold sm:text-xl md:text-2xl lg:text-3xl  text-amber-300 drop-shadow-sm flex md:justify-end justify-end">
                 April 25, 2025
               </p>
             </div>

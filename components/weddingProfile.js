@@ -20,7 +20,7 @@ const WeddingInvitation = () => {
 
         <div className="bg-[#C97345] text-white">
   <div className="container xl:max-w-6xl mx-auto px-4 md:px-8 py-12 md:py-20">
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center">
       
       {/* Left Title */}
       <motion.div
@@ -42,19 +42,17 @@ const WeddingInvitation = () => {
         className="space-y-6 text-base sm:text-lg leading-relaxed text-justify"
       >
         <p>
-          Feugiat pretium egestas enim blandit purus euismod. Feugiat magna aliquam
-          lectus lectus eu amet. Eros, accumsan purus enim nascetur quam diam felis,
-          fringilla varius. Quis purus nisl orci eu, ultrices. Purus pretium egestas
-          ultricies tempus sit elit.
+        It all started in 2018, precisely December 2018 when I met this beautiful lady in the University of Buea. It was through a friend, his name is Ebot. So I later spoke to him and I said, "Who is that girl? Can I be...
         </p>
         <p>
-          Vitae lacus, aliquet lorem mauris, sit dolor sodales. Nullam quam quis lorem
-          dui tristique massa enim. Faucibus sed egestas mollis vivamus et sed sed.
+        maybe can I have the opportunity to meet her sometime?" So he promised me, and not long from then, he brought her to Douala. So the first time we actually sat down and spoke is when she came to my house and I asked her a little bit about herself and she... so we put up a date and towards the end of December 2018, the first place we started was Santa Lucia Bonaberi where we had some drinks and food. 
         </p>
         <p>
-          Feugiat magna aliquam lectus lectus eu amet. Eros, accumsan purus enim
-          nascetur quam diam felis, fringilla varius. Quis purus nisl orci eu,
-          ultrices. Purus pretium egestas ultricies tempus sit elit.
+        And on that same day when I saw her off around midnight... and that was our first kiss. So later on we got to know each other and since then God has been so faithful. Uh, I want to thank God for everything that has happened and I look forward to having Mrs. Etanyeor. 
+        </p>
+        <p>
+        So dear friends, we look forward to celebrating with you. We wish to invite you to our marriage celebration which will take place on April 23rd, 2025. We appreciate your presence. Thank you very much.
+
         </p>
       </motion.div>
     </div>
@@ -73,7 +71,7 @@ const WeddingInvitation = () => {
           {/* Heading */}
          
           <motion.h1 
-          className={`${allura.className}  text-4xl md:text-5xl font-bold text-center mb-8 text-gray-800`}
+          className={`${allura.className}  text-4xl md:text-5xl font-bold text-center mb-8 text-amber-500`}
           whileHover={{ scale: 1.02 }}
         >
           Hello!
@@ -105,15 +103,14 @@ const WeddingInvitation = () => {
             >
               <div className="flex flex-col md:flex-row items-center gap-6">
                 <div className="order-2 md:order-1 text-right">
-                  <h2 className={`${allura.className} text-3xl font-semibold mb-4 text-amber-40 text-amber-400`}>Etanyeor</h2>
+                  <h2 className={`${allura.className} text-3xl font-semibold mb-4 text-amber-40 text-amber-400`}>Mr. Etanyeor</h2>
                   <p className="text-gray-600  text-justify leading-relaxed text-">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
-                  </p>
+                  I am a software engineer and entrepreneur with a passion for building innovative digital solutions that make everyday life easier. With a background in computer science and over eight years of industry experience, I’ve worked on everything from fintech platforms to community-focused apps. I believe in the power of technology to connect people and create opportunities, and I’m always exploring new ideas that combine creativity, functionality, and impact. Outside of work, I enjoy mentoring aspiring developers and contributing to open-source projects.                  </p>
                 </div>
                 <div className="order-1 md:order-2">
                   <div className="relative w-32 h-32 rounded-full overflow-hidden border-4 border-pink-200">
                     <Image 
-                      src={'/images/image2.jpg'} 
+                      src={'/images/eta.jpg'} 
                       layout="fill"
                       objectFit="cover"
                       className="rounded-full"
@@ -175,7 +172,7 @@ const WeddingInvitation = () => {
                 <div>
                   <div className="relative w-32 h-32 rounded-full overflow-hidden border-4 border-pink-200">
                     <Image 
-                      src={'/images/image2.jpg'} 
+                      src={'/images/regina.jpg'} 
                       layout="fill"
                       objectFit="cover"
                       className="rounded-full"
@@ -184,10 +181,9 @@ const WeddingInvitation = () => {
                   </div>
                 </div>
                 <div>
-                  <h2 className={`${allura.className} text-3xl font-semibold mb-4  text-amber-400`}>Regina</h2>
+                  <h2 className={`${allura.className} text-3xl font-semibold mb-4  text-amber-400`}>Mrs. Regina</h2>
                   <p className="text-gray-600 text-justify leading-relaxed">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
-                  </p>
+                  I am an interior designer and creative consultant with a deep passion for transforming spaces into stories. With over ten years of experience, I specialize in curating elegant, functional interiors that reflect the personality and lifestyle of each client. My work blends timeless design with modern touches, and I find joy in crafting environments that inspire comfort, connection, and beauty. Whether it’s a cozy home or a stylish commercial space, I believe design should always speak from the heart.     </p>
                 </div>
               </div>
             </motion.div>
