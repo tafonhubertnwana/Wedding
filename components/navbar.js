@@ -1,6 +1,5 @@
 "use client"
 import { useState, useEffect } from 'react';
-
 import Link from 'next/link';
 import { Suspense } from 'react'
 import { usePathname, useSearchParams } from 'next/navigation';
@@ -12,13 +11,46 @@ const allura = Allura({
   subsets: ['latin'],
 });
 
-const NavbarContent= () => {
+const NavbarContent = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [showBackToTop, setShowBackToTop] = useState(false);
   const [activeSection, setActiveSection] = useState('');
   const pathname = usePathname();
   const searchParams = useSearchParams();
+
+  const scrollToSection = (id) => {
+    if (id === '/') {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+      // Update URL without hash
+      if (history.pushState) {
+        history.pushState(null, null, ' ');
+      }
+      setActiveSection('/');
+      return;
+    }
+
+    const element = document.querySelector(id);
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+      
+      // Update URL hash without jumping
+      if (history.pushState) {
+        history.pushState(null, null, id);
+      } else {
+        window.location.hash = id;
+      }
+      
+      setActiveSection(id);
+      setIsScrolled(true);
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -52,11 +84,11 @@ const NavbarContent= () => {
 
     // Set initial state based on hash
     if (window.location.hash) {
-      setIsScrolled(true); // If there's a hash, navbar should be white
+      setIsScrolled(true);
     } else if (window.scrollY === 0) {
-      setIsScrolled(false); // If no hash and at top, navbar is transparent
+      setIsScrolled(false);
     } else {
-      setIsScrolled(true); // If no hash but scrolled, navbar is white
+      setIsScrolled(true);
     }
 
     // Set initial active section
@@ -72,7 +104,7 @@ const NavbarContent= () => {
     // Update active section when URL changes
     if (window.location.hash) {
       setActiveSection(window.location.hash);
-      setIsScrolled(true); // Ensure navbar is white when section changes
+      setIsScrolled(true);
     } else if (pathname === '/') {
       setActiveSection('/');
     }
@@ -83,47 +115,41 @@ const NavbarContent= () => {
       top: 0,
       behavior: 'smooth'
     });
+    setActiveSection('/');
   };
+
+  const navLinks = [
+    { id: '/', text: 'Home' },
+    { id: '#story', text: 'Story' },
+    { id: '#events', text: 'Events' },
+    { id: '#gallery', text: 'Gallery' },
+    { id: '#contact', text: 'Contact' }
+  ];
 
   return (
     <>
       <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-lg text-amber-500' : 'bg-transparent text-white'}`}>
         <div className="container mx-auto px-6 py-4 flex justify-between items-center">
           <div className={`text-4xl font-normal tracking-wider ${isScrolled ? 'text-amber-500' : 'text-white'} ${allura.className}`}>
-            <Link href="/">RETA2025</Link>
+            <Link href="/" onClick={(e) => {
+              e.preventDefault();
+              scrollToSection('/');
+            }}>RETA2025</Link>
           </div>
           <div className="hidden xl:flex space-x-6">
-            <Link 
-              href="/" 
-              className={`${isScrolled ? 'text-amber-500' : 'text-white'} hover:text-amber-500 ${activeSection === '/' ? 'font-bold' : ''}`}
-            >
-              Home
-            </Link>
-            <Link 
-              href="#story" 
-              className={`${isScrolled ? 'text-amber-500' : 'text-white'} hover:text-amber-500 ${activeSection === '#story' ? 'font-bold' : ''}`}
-            >
-              Story
-            </Link>
-            
-            <Link 
-              href="#events" 
-              className={`${isScrolled ? 'text-amber-500' : 'text-white'} hover:text-amber-500 ${activeSection === '#events' ? 'font-bold' : ''}`}
-            >
-              Events
-            </Link>
-            <Link 
-              href="#gallery" 
-              className={`${isScrolled ? 'text-amber-500' : 'text-white'} hover:text-amber-500 ${activeSection === '#gallery' ? 'font-bold' : ''}`}
-            >
-              Gallery
-            </Link>
-            <Link 
-              href="#contact" 
-              className={`${isScrolled ? 'text-amber-500' : 'text-white'} hover:text-amber-500 ${activeSection === '#contact' ? 'font-bold' : ''}`}
-            >
-              Contact
-            </Link>
+            {navLinks.map((link) => (
+              <a
+                key={link.id}
+                href={link.id}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection(link.id);
+                }}
+                className={`${isScrolled ? 'text-amber-500' : 'text-white'} hover:text-amber-500 ${activeSection === link.id ? 'font-bold' : ''}`}
+              >
+                {link.text}
+              </a>
+            ))}
           </div>
           <button onClick={() => setIsOpen(!isOpen)} className={`${isScrolled ? 'text-amber-500' : 'text-white'} lg:hidden focus:outline-none`}>
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -135,7 +161,13 @@ const NavbarContent= () => {
         {/* Mobile Menu */}
         <div className={`lg:hidden fixed inset-y-0 left-0 w-72 md:w-84 bg-white transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out z-50`}>
           <div className="flex justify-between items-center p-4 border-b">
-            <div className={`text-4xl font-normal tracking-wider ${isScrolled ? 'text-amber-500' : 'text-amber-500'} ${allura.className}`}>RETA2025</div>
+            <div className={`text-4xl font-normal tracking-wider text-amber-500 ${allura.className}`}>
+              <a href="/" onClick={(e) => {
+                e.preventDefault();
+                scrollToSection('/');
+                setIsOpen(false);
+              }}>RETA2025</a>
+            </div>
             <button onClick={() => setIsOpen(false)} className="text-gray-800 focus:outline-none">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
@@ -143,42 +175,20 @@ const NavbarContent= () => {
             </button>
           </div>
           <div className="p-4">
-            <Link 
-              href="/" 
-              className={`block py-2 text-gray-800 hover:text-amber-500 ${activeSection === '/' ? 'font-bold' : ''}`}
-              onClick={() => setIsOpen(false)}
-            >
-              Home
-            </Link>
-            <Link 
-              href="#story" 
-              className={`block py-2 text-gray-800 hover:text-amber-500 ${activeSection === '#story' ? 'font-bold' : ''}`}
-              onClick={() => setIsOpen(false)}
-            >
-              Story
-            </Link>
-            
-            <Link 
-              href="#events" 
-              className={`block py-2 text-gray-800 hover:text-amber-500 ${activeSection === '#events' ? 'font-bold' : ''}`}
-              onClick={() => setIsOpen(false)}
-            >
-              Events
-            </Link>
-            <Link 
-              href="#gallery" 
-              className={`block py-2 text-gray-800 hover:text-amber-500 ${activeSection === '#gallery' ? 'font-bold' : ''}`}
-              onClick={() => setIsOpen(false)}
-            >
-              Gallery
-            </Link>
-            <Link 
-              href="#contact" 
-              className={`block py-2 text-gray-800 hover:text-amber-500 ${activeSection === '#contact' ? 'font-bold' : ''}`}
-              onClick={() => setIsOpen(false)}
-            >
-              Contact
-            </Link>
+            {navLinks.map((link) => (
+              <a
+                key={link.id}
+                href={link.id}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection(link.id);
+                  setIsOpen(false);
+                }}
+                className={`block py-2 text-gray-800 hover:text-amber-500 ${activeSection === link.id ? 'font-bold' : ''}`}
+              >
+                {link.text}
+              </a>
+            ))}
           </div>
         </div>
         

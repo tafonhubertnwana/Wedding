@@ -117,9 +117,10 @@ const WeddingInfo = () => {
 
 
   return (
-    <section id='events' className="relative py-12 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 min-h-screen bg-[url('/images/bg.webp')] bg-cover bg-center text-center">
+    <section  className="relative py-12 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 min-h-screen bg-[url('/images/bg.webp')] bg-cover bg-center text-center">
   {/* Countdown Timer */}
-  <div className="container xl:max-w-6xl mx-auto p-6">
+  
+  <div className="container xl:max-w-6xl mx-auto p-6" id='events'>
     <div className="flex gap-2 justify-center sm:gap-4 -mt-36 mb-16">
       {Object.entries(timeLeft).map(([unit, value]) => (
         <motion.div
@@ -201,7 +202,7 @@ const WeddingInfo = () => {
               
               <motion.h3 
                 whileHover={{ scale: 1.02 }}
-                className={`${allura.className} text-3xl text-gray-800 mb-8 font-bold`}
+                className={`${allura.className} text-3xl text-amber-500 mb-8 font-bold`}
               >
                 {event.title}
               </motion.h3>

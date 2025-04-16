@@ -69,51 +69,16 @@ export default function GuestForm() {
   
 
   return (
-    <div id="contact" className=" bg-gray-200 py-10 px-6">
+    <div id="contact" className=" bg-gray-200 py-6 pt-10 w-full">
       <div className="max-w-6xl mx-auto bg-white shadow-xl overflow-hidden md:grid md:grid-cols-2 gap-10">
         <div className="p-10  mx-auto">
           <motion.h2 
             initial={{ opacity: 0, y: -20 }} 
             animate={{ opacity: 1, y: 0 }} 
             transition={{ duration: 0.6 }}
-            className={`${allura.className} text-4xl sm:text-5xl md:text-5xl text-amber<div className="relative">
-      {/* Play Button */}
-      {!isPlaying && (
-        <div className="absolute inset-0 flex items-center justify-center z-10">
-          <button 
-            className="bg-white bg-opacity-70 rounded-full p-4 hover:bg-opacity-90 transition"
-            onClick={() => setIsPlaying(true)}
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-5.197-3.027A1 1 0 008 9.027v5.946a1 1 0 001.555.832l5.197-3.027a1 1 0 000-1.66z" />
-            </svg>
-          </button>
-        </div>
-      )}
-
-      {/* Modal Video */}
-      {isPlaying && (
-        <div className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center">
-          <div className="relative max-w-4xl w-full px-4">
-            <button 
-              className="absolute top-4 right-4 text-white text-3xl font-bold z-10"
-              onClick={closeModal}
-            >
-              &times;
-            </button>
-            <video
-              ref={videoRef}
-              className="w-full max-h-[80vh] rounded-lg shadow-lg"
-              controls
-              autoPlay
-            >
-              <source src="/videos/your-video.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        </div>
-      )}
-    </div> font-cursive text-center mb-4`}>
+            className={`${allura.className} text-4xl sm:text-5xl md:text-5xl flex justify-center text-amber-500` }>
+      
+     
             Guest Form
           </motion.h2>
           <p className="text-center text-gray-600 mb-8">
