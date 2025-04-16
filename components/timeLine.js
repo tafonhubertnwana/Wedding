@@ -148,7 +148,7 @@ const Timeline = () => {
             </div>
             <div className="w-3/4 pl-4">
               <time className="font-mono italic text-gray-500 text-lg">April 25, 2025</time>
-              <h3 className="text-xl font-bold text-amber-400 mt-2">We're Getting Married!</h3>
+              <h3 className={`${allura.className} text-xl sm:text-2xl font-bold mt-2 text-amber-400`}>We're Getting Married!</h3>
               <p className="text-gray-700 text-justify mt-1">After this beautiful journey together, we've decided to tie the knot and spend the rest of our lives as partners. Join us as we celebrate our love!</p>
             </div>
           </div>
