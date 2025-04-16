@@ -157,7 +157,7 @@ const WeddingInfo = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 0.4 }}
-      className="mt-1 text-gray-600 max-w-2xl mx-auto text-center text-lg sm:text-base font-light italic"
+      className="mt-1 text-gray-600 max-w-2xl mx-auto text-center text-lg sm:text-base font-light "
     >
       Join us as we celebrate our special day
     </motion.p>
@@ -266,14 +266,14 @@ const WeddingInfo = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 0.6 }}
-      className="mt-20 bg-amber-50 rounded-xl p-8 sm:p-10 max-w-4xl mx-auto border border-amber-200"
+      className="mt-20 bg-purple-500  p-8 sm:p-10 max-w-4xl mx-auto border border-amber-200"
     >
-      <h3 className={`${allura.className} text-4xl text-center text-gray-800 mb-8 font-bold`}>R.S.V.P</h3>
+      <h3 className={`${allura.className} text-4xl sm:text-5xl md:text-5xl text-amber-400 text-center  mb-8 font-bold`}>R.S.V.P</h3>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
         {/* Groom's Family Contact */}
-        <div className="bg-white p-8 rounded-xl shadow-sm border border-amber-100">
-          <h4 className={`${allura.className} text-2xl text-gray-800 mb-6 font-bold`}>
+        <div className="bg-white p-8  shadow-sm border border-amber-100">
+          <h4 className={`${allura.className} text-2xl sm:text-2xl md:text-4xl text-amber-400 mb-6 font-bold`}>
             Groom's Family
           </h4>
           <div className="space-y-4">
@@ -289,15 +289,15 @@ const WeddingInfo = () => {
               <FaPhone className="text-amber-500 text-base" /> 
               <span>(+237) 675 938 332</span>
             </p>
-            <p className="text-gray-500 mt-6 text-center italic">
+            <p className="text-gray-500 mt-6 text-center ">
               Please confirm your attendance by April 20th
             </p>
           </div>
         </div>
         
         {/* Bride's Family Contact */}
-        <div className="bg-white p-8 rounded-xl shadow-sm border border-amber-100">
-          <h4 className={`${allura.className} text-2xl text-gray-800 mb-6 font-bold`}>
+        <div className="bg-white p-8  shadow-sm border border-amber-100">
+          <h4 className={`${allura.className} text-2xl sm:text-2xl md:text-4xl text-amber-400 mb-6 font-bold`}>
             Bride's Family
           </h4>
           <div className="space-y-4">
@@ -309,7 +309,7 @@ const WeddingInfo = () => {
               <FaPhone className="text-amber-500 text-base" /> 
               <span>(+237) 679 118 315</span>
             </p>
-            <p className="text-gray-500 mt-6 text-center italic">
+            <p className="text-gray-500 mt-6 text-center ">
               Please confirm your attendance by April 20th
             </p>
           </div>
@@ -320,7 +320,7 @@ const WeddingInfo = () => {
         <motion.button
           whileHover={{ scale: 1.05, boxShadow: "0 5px 15px rgba(245, 158, 11, 0.4)" }}
           whileTap={{ scale: 0.98 }}
-          className="px-10 py-4 bg-amber-500 text-white rounded-full text-lg font-medium hover:bg-amber-600 transition-colors shadow-lg"
+          className="px-10 py-4 bg-amber-500 text-white  text-lg font-medium hover:bg-amber-600 transition-colors shadow-lg"
         >
           Send Digital RSVP
         </motion.button>

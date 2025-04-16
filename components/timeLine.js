@@ -60,7 +60,7 @@ const Timeline = () => {
             className="mb-20"
           >
             {/* Mobile/Tablet layout (image left, content right) */}
-            <div className="md:hidden flex w-full">
+            <div className="md:hidden flex w-full ">
               <div className="w-1/4 pr-4 flex justify-center">
                 <motion.img
                   src={event.image}
@@ -72,7 +72,7 @@ const Timeline = () => {
                   viewport={{ once: true }}
                 />
               </div>
-              <div className="w-3/4 pl-4">
+              <div className="w-3/4 pl-4 border-2 md:p-4" >
                 <time className="font-mono italic text-gray-500 text-lg">{event.year}</time>
                 <h3 className={`${allura.className} text-xl font-bold text-amber-400 mt-2`}>{event.title}</h3>
                 <p className="text-gray-700 text-justify mt-1">{event.description}</p>
@@ -80,10 +80,10 @@ const Timeline = () => {
             </div>
             
             {/* Desktop layout (alternating sides) */}
-            <div className="hidden md:flex w-full">
+            <div className="hidden md:flex w-full ">
               {index % 2 === 0 ? (
                 <>
-                  <div className="w-1/2 pr-8 text-right">
+                  <div className="w-1/2 pr-8 text-right border-2">
                     <time className="font-mono italic text-gray-500 text-lg">{event.year}</time>
                     <h3 className={`${allura.className} text-xl sm:text-2xl font-bold mt-2`}>{event.title}</h3>
                     <p className="text-gray-700 mt-1">{event.description}</p>

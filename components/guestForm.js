@@ -18,6 +18,8 @@ export default function GuestForm() {
   const [formData, setFormData] = useState({ name: '', email: '' });
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
 
   const togglePlay = () => {
     if (isPlaying) {
@@ -42,22 +44,29 @@ export default function GuestForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    setIsSubmitting(true);
+  
     const res = await fetch('/api/rsvp', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ attending, ...formData, guests }),
     });
-
-    if (res.ok) {
-      toast.success('RSVP sent successfully!');
+  
+    const data = await res.json();
+    setIsSubmitting(false); // stop loading state
+  
+    if (res.ok && data.emailSent) {
+      toast.success('RSVP and email sent successfully!');
       setFormData({ name: '', email: '' });
       setAttending('');
       setGuests(['']);
+    } else if (res.ok && !data.emailSent) {
+      toast.warn('RSVP saved, but email failed to send.');
     } else {
       toast.error('Something went wrong. Please try again.');
     }
   };
+  
 
   return (
     <div id="contact" className=" bg-gray-200 py-10 px-6">
@@ -67,12 +76,13 @@ export default function GuestForm() {
             initial={{ opacity: 0, y: -20 }} 
             animate={{ opacity: 1, y: 0 }} 
             transition={{ duration: 0.6 }}
-            className={`${allura.className} text-3xl font-cursive text-center mb-4`}>
+            className={`${allura.className} text-4xl sm:text-5xl md:text-5xl text-amber-400 font-cursive text-center mb-4`}>
             Guest Form
           </motion.h2>
           <p className="text-center text-gray-600 mb-8">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
-          </p>
+  We are so excited to celebrate our special day with the people we love most. Kindly let us know if you'll be joining us by filling out the RSVP form below. Your presence means the world to us!
+</p>
+
 
           <form onSubmit={handleSubmit} className="space-y-4 max-w-4xl mx-auto">
       <p className="font-semibold">Will you be attending the wedding?</p>
@@ -93,9 +103,35 @@ export default function GuestForm() {
           )}
         </div>
       ))}
-      <div className="pt-4">
-        <button type="submit" className="bg-purple-500 text-white px-6 py-2 w-full">Submit</button>
-      </div>
+     <button 
+  type="submit" 
+  className="bg-purple-500 text-white px-6 py-2 w-full flex items-center justify-center gap-2 disabled:opacity-50" 
+  disabled={isSubmitting}
+>
+  {isSubmitting ? (
+    <>
+      <svg className="animate-spin h-5 w-5 text-white" viewBox="0 0 24 24">
+        <circle
+          className="opacity-25"
+          cx="12"
+          cy="12"
+          r="10"
+          stroke="currentColor"
+          strokeWidth="4"
+        />
+        <path
+          className="opacity-75"
+          fill="currentColor"
+          d="M4 12a8 8 0 018-8v8H4z"
+        />
+      </svg>
+      Submitting...
+    </>
+  ) : (
+    'Submit'
+  )}
+</button>
+
     </form>
         </div>
         <motion.div 
