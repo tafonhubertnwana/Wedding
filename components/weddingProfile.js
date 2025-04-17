@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { FaHeart } from 'react-icons/fa';
 import WeddingTimeline from "@/components/timeLine";
 import { Allura } from 'next/font/google';
+import { useState } from 'react';
 
 const allura = Allura({
   weight: '400',
@@ -13,6 +14,8 @@ const allura = Allura({
 });
 
 const WeddingInvitation = () => {
+  
+  const [showFull, setShowFull] = useState(false);
   return (
     <section id='story'>
        <section className="w-full bg-[#C97345] text-white">
@@ -36,25 +39,42 @@ const WeddingInvitation = () => {
 
       {/* Right Paragraphs */}
       <motion.div
-        initial={{ opacity: 0, x: 50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-        className="space-y-6 text-base sm:text-lg leading-relaxed text-justify"
-      >
-        <p>
-        It all started in 2018, precisely December 2018 when I met this beautiful lady in the University of Buea. It was through a friend, his name is Ebot. So I later spoke to him and I said, "Who is that girl? Can I be...
-        </p>
-        <p>
-        maybe can I have the opportunity to meet her sometime?" So he promised me, and not long from then, he brought her to Douala. So the first time we actually sat down and spoke is when she came to my house and I asked her a little bit about herself and she... so we put up a date and towards the end of December 2018, the first place we started was Santa Lucia Bonaberi where we had some drinks and food. 
-        </p>
-        <p>
-        And on that same day when I saw her off around midnight... and that was our first kiss. So later on we got to know each other and since then God has been so faithful. Uh, I want to thank God for everything that has happened and I look forward to having Mrs. Etanyeor. 
-        </p>
-        <p>
-        So dear friends, we look forward to celebrating with you. We wish to invite you to our marriage celebration which will take place on April 23rd, 2025. We appreciate your presence. Thank you very much.
+       initial={{ opacity: 0, x: 50 }}
+       animate={{ opacity: 1, x: 0 }}
+       transition={{ duration: 0.8, delay: 0.2 }}
+      className="space-y-6 text-base sm:text-lg leading-relaxed text-justify"
+    >
+      <p>
+        It all started in early December 2018 when I met this beautiful lady in the University of Buea as I went to visit a friend and we were taking a stroll. It was through a friend, his name; Ebot Carl and also later through Arreyvite Tambe. Seeing them talk with her, and how she responded & behaved, made me want to know her more.
+      </p>
+      <p>
+        Since I was already based in Douala, fortunately for me the next time they came to Douala, they came along with her, also as the socio-political crisis was raging in the South west. They visited me with her twice when I got to know her better and spoke to her several times. We got to know each other and exchanged contacts. We felt comfortable with each other and got into a relationship towards the end of December 2018. 
+      </p>
 
-        </p>
-      </motion.div>
+      {showFull && (
+        <>
+          <p>
+            Through out the time of our relationship in 2019, we got to understand each other better and faced a reasonable share of challenges as we tried to dream big. As we faced criticisms too, we saw opportunities to keep trying to carve our own path. In 2021, we had our daughter Eneketa Mayuk, and she came in, to completely rehsape our relationship and re-orient us as to our next steps. With her coming, we realised a lot of successes in our plans and we kept finding ways to resolve our minor issues while staying together.
+          </p>
+          <p>
+            We focused more on trying to have a solid financial foundation for our family rather than getting married first, and making it legal. An action that drew sharp criticism from family and friends. However, we understood the principle of the family being two people willing to defend each other against all forms of criticism and believing in each other. It was a big risk for both of us too since we could face a break up if we lost interest in each other. However, we kept finding value in each other. We made a reasonable financial breakthrough in 2021 through some investments in financial assets. Instead of getting married, we decided to informally start a small consultancy business and a baby accessories supply business overseen by each of us individually, but jointly owned. The criticisms kept coming for we showed little signs of financial growth but were unable make our union official. We decided to incorporate our consultancy business instead and to handle the criticism.
+          </p>
+          <p>
+            Finally in 2024, I knew I wanted to move ahead to making it official. I looked at using her birthday Jan 29, 2024 but failed due to time constraints. Therefore, August 31st my birthday was the only othe reasonable opportunity. We gathered friends at Mayuka Residence (Ancienne route), a day when she said yes to marrying me and now, we look forward to officially celebrating with you on April 25 & 26, 2025.
+          </p>
+          <p>
+            We have several plans for the future and we look forward to God as we hope to work together to grow even more. We wish to thank everyone who has always been by us and we love you all.
+          </p>
+        </>
+      )}
+
+      <button
+        onClick={() => setShowFull(!showFull)}
+        className="text-purple-600 font-semibold hover:underline"
+      >
+        {showFull ? 'Read Less' : 'Read More'}
+      </button>
+    </motion.div>
     </div>
   </div>
 </div>
@@ -105,8 +125,9 @@ const WeddingInvitation = () => {
                 <div className="order-2 md:order-1 text-right">
                   <h2 className={`${allura.className} text-3xl font-semibold mb-4 text-amber-40 text-amber-400`}>Mr. Etanyeor</h2>
                   <p className="text-gray-600  text-justify leading-relaxed text-">
-                  I am a software engineer and entrepreneur with a passion for building innovative digital solutions that make everyday life easier. With a background in computer science and over eight years of industry experience, I’ve worked on everything from fintech platforms to community-focused apps. I believe in the power of technology to connect people and create opportunities, and I’m always exploring new ideas that combine creativity, functionality, and impact. Outside of work, I enjoy mentoring aspiring developers and contributing to open-source projects.                  </p>
-                </div>
+                  I am an Accountant and a Business Process Engineer, with a passion to provide innovative and common-sense solutions that re-orients businesses. As the majority Shareholder and Managing Director of Etanyeor Consulting Ltd, I oversee the re-engineering and design of business processes for entities we have engagements with. <br/>
+
+I am a details-oriented person, enjoy following current affairs and on a mission to contribute to the development of my own community through the power of information technology. I also view family as the foundation of society and look forward to enjoying my own journey. I’ve pursued degrees in Accounting, and in Software Engineering and open to learning more in the coming years.   </p>             </div>
                 <div className="order-1 md:order-2">
                   <div className="relative w-32 h-32 rounded-full overflow-hidden border-4 border-pink-200">
                     <Image 
@@ -183,7 +204,9 @@ const WeddingInvitation = () => {
                 <div>
                   <h2 className={`${allura.className} text-3xl font-semibold mb-4  text-amber-400`}>Mrs. Regina</h2>
                   <p className="text-gray-600 text-justify leading-relaxed">
-                  I am an interior designer and creative consultant with a deep passion for transforming spaces into stories. With over ten years of experience, I specialize in curating elegant, functional interiors that reflect the personality and lifestyle of each client. My work blends timeless design with modern touches, and I find joy in crafting environments that inspire comfort, connection, and beauty. Whether it’s a cozy home or a stylish commercial space, I believe design should always speak from the heart.     </p>
+                  I am the owner of Gina Kids Collection, a small business specialized in providing new born baby and young children outfits/accessories and located at Bonendale-Douala. As a Shareholder of Etanyeor Consulting Ltd, I share in the vision of the entity and play a role in defining and implementing its strategic objectives in cooperation with the managing director. I occupy the role of the Strategy Analyst for Etanyeor Consulting Ltd. <br/>
+
+I am a language person, haven pursued a degree in English Language, I teach English language and Literature and I look forward to trying new paths in the future.     </p>
                 </div>
               </div>
             </motion.div>

@@ -1,6 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion";
+
 import { Allura } from 'next/font/google';
 
 const allura = Allura({
@@ -13,32 +14,26 @@ const timelineData = [
   {
     year: "December 2018",
     title: "First Date",
-    description: "It was a chilly winter evening when we first met at that little Italian bistro downtown. I spilled my wine within five minutes (typical), but instead of laughing at me, you helped clean it up and ordered me another glass. We talked until the staff started stacking chairs, and I knew right then—this was different. You walked me home under the streetlights, and I replayed every word you said in my head for days.",
+    description: "It was a cool evening, in December of 2018. We met at Maison H in Bonapriso. We had some drinks and food. Shared our stories, how far we’ve gone and the circumstances under which we met. In our conversations, we found the interest in each other and knew we needed to keeping talking for we hoped something special would grow from that.",
     image: '/images/gallery-11.jpg'
   },
   {
-    year: "June 2020",
+    year: "September 2021",
     title: "Our First Child",
-    description: "By 'first child,' we mean Max, the golden retriever puppy who destroyed our couch but stole our hearts. You swore we wouldn't spoil him, yet by week two, he was sleeping in our bed. Those late-night potty walks and chewed-up shoes became our shared chaos—and I wouldn't trade it for anything. (Though I still blame you for letting him lick the butter off the counter that one time.)",
+    description: "Our daughter is Eneketa Mayuk and she was born on Friday September 10, 2021 at 11:45 am. It was a conscious decision to have her and she has been a blessing since then. She’s a very big girl now and is a good mixture of both of us in terms of character and physical appearance.",
     image: '/images/gallery-18.jpg'
   },
   {
-    year: "February 2022",
-    title: "Second Date",
-    description: "Yes, we call it a 'second date' because after three years together, we realized we'd never actually gone on a proper dinner-and-movie night like normal couples. So we recreated our first date—same restaurant, same wine spill (again, me)—but this time, you kissed me goodnight instead of that awkward hug. Progress.",
+    year: "May 2022",
+    title: "Our vacation with our child.",
+    description: "When Eneketa was 08 months old, we went on a vacation to Yaounde. We decided we would go on a plane to and fro. At the airport, an officer asked for her birth certificate to proof she’s not a stolen child. We laughed and asked if her face isn’t enough evidence. He laughed back. It was wonderful family vacation.",
     image: '/images/gallery-7.jpg'
   },
   {
-    year: "March 2023",
-    title: "Our Vacation",
-    description: "That cabin in the mountains with no WiFi, just a fireplace and a deck of cards. You burned the pancakes every morning, and I kept forgetting to pack socks. We hiked to a waterfall, where you slipped on a rock and came up laughing, soaked to the bone. I took a photo of that grin—your 'I don't care if I look ridiculous' grin—and it's still my phone wallpaper.",
-    image: '/images/gallery-14.jpg'
-  },
-  {
-    year: "April 2024",
-    title: "The Proposal",
-    description: "You planned a picnic at our favorite park, right under the oak tree where we had our first fight (over whether pineapple belongs on pizza). As I unwrapped the sandwiches, I found a ring tucked between the pickles. You said, 'I'd rather argue with you about stupid things forever than agree with anyone else.' Luna barked. I cried. You panicked when I took too long to say yes.",
-    image: "/images/gallery-21.jpg"
+    year: "August 2024",
+    title: "The proposal.",
+    description: "Haven been together for a very long time, almost 8 years, I decided I was going to propose and take on the marriage rites. I decided I was going to do so on my birthday August 31st 2024. I invited close friends under the pretext of a birthday party. She was surprised when she arrived and saw the number of people who had assembled. It was a wonderful evening as she said yes to me. We all enjoyed the evening and by September 1st, 2024, we began planning for our big event and decided it will be on April 25 & 26 of 2025.",
+    image: '/images/gallery-21.jpg'
   },
 ];
 
@@ -149,7 +144,9 @@ const Timeline = () => {
             <div className="w-3/4 pl-4">
               <time className="font-mono italic text-gray-500 text-lg">April 25, 2025</time>
               <h3 className={`${allura.className} text-xl sm:text-2xl font-bold mt-2 text-amber-400`}>We're Getting Married!</h3>
-              <p className="text-gray-700 text-justify mt-1">After this beautiful journey together, we've decided to tie the knot and spend the rest of our lives as partners. Join us as we celebrate our love!</p>
+              <p className="text-gray-700 text-justify mt-1">After this After this beautiful journey together, we’ve seen a significant part of each other and are now ready to tie the knot and spend the rest of our lives as partners.
+
+Join us as we celebrate our love on April 25 and 26, 2025, in 4 events (Traditional, Council, Church and Reception), all in Bonaberi - Douala.</p>
             </div>
           </div>
           
@@ -157,7 +154,9 @@ const Timeline = () => {
             <div className="w-1/2 pr-8 text-right">
               <time className="font-mono italic text-gray-500 text-lg">April 25, 2025</time>
               <h3 className={`${allura.className} text-xl sm:text-2xl font-bold mt-2 text-amber-400`}>We're Getting Married!</h3>
-              <p className="text-gray-700 mt-1">After this beautiful journey together, we've decided to tie the knot and spend the rest of our lives as partners. Join us as we celebrate our love!</p>
+              <p className="text-gray-700 mt-1">After this After this beautiful journey together, we’ve seen a significant part of each other and are now ready to tie the knot and spend the rest of our lives as partners.
+
+Join us as we celebrate our love on April 25 and 26, 2025, in 4 events (Traditional, Council, Church and Reception), all in Bonaberi - Douala.</p>
             </div>
             <div className="w-1/2 flex justify-center">
               <motion.div
